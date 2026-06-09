@@ -1,0 +1,21 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: ms-asignacion
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 123
+    url: jdbc:mysql://localhost:3306/db_asignacion?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html

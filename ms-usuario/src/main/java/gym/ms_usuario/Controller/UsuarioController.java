@@ -2,24 +2,29 @@ package gym.ms_usuario.Controller;
 
 import gym.ms_usuario.Model.Usuario;
 import gym.ms_usuario.Service.UsuarioService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/usuarios")
 public class UsuarioController {
     @Autowired
     private UsuarioService service;
 
+
     @GetMapping
     public List<Usuario> listarTodos() {
+        log.debug("DEBUG: Se encontraron los siguientes usuarios");
         return service.obtenerTodos();
     }
 
     @GetMapping("/{id}")
     public Usuario buscarPorId(@PathVariable int id){
+        log.info("INFORMACION: Administrador solicita informacion de usuario con id="+id);
         return service.findById(id);
     }
 

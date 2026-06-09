@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  file:
+    name: mi-log-aplicacion.log
+  level:
+    gym:
+      ms_usuario: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+    root: INFO
+server:
+  port: 8084
+spring:
+  application:
+    name: ms-usuario
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/db_usuario?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
