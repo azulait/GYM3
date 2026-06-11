@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "ms-ejercicios", url = "http://localhost:8082/api/v1/ejercicios")
+@FeignClient(name = "ms-ejercicios", path = "/api/v1/ejercicios")
 public interface EjercicioFeingClient {
     @GetMapping("/{id}")
     EjercicioDTO obtenerEjercicioPorId(@PathVariable("id") int id);
