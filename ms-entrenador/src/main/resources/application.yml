@@ -1,28 +1,18 @@
+server:
+  port: 8082
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-logging:
-  file:
-    name: log-entrenador.log
-  level:
-    gym:
-      ms_entrenador: DEBUG
-    org:
-      hibernate:
-        SQL: DEBUG
-    root: INFO
-server:
-  port: 8081
 spring:
   application:
-    name: ms-entrenador
+    name: ms-ejercicios
   profiles:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
-    url: jdbc:mysql://localhost:3306/db_entrenador?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/db_ejercicio?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
   jpa:
     hibernate:
@@ -35,3 +25,10 @@ springdoc:
   swagger-ui:
     enabled: true
     path: /doc/swagger-ui.html
+logging:
+  file:
+    name: log-ejercicios.log
+  level:
+    gym.ms_ejercicios: DEBUG
+    org.hibernate.SQL: DEBUG
+    root: INFO
