@@ -21,7 +21,5 @@ public class Asignacion {
     private int usuarioId;
     private int planNutricionalId;
     private int ejercicioId;
-    private LocalDate fechaInicio;
-    private String estado;
 
 }
