@@ -1,4 +1,4 @@
-package gym.ms_entrenador.service;
+package gym.ms_entrenador;
 
 import gym.ms_entrenador.model.Entrenador;
 import gym.ms_entrenador.repository.EntrenadorRepository;
