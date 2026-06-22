@@ -68,9 +68,8 @@ public class UsuarioServiceTest {
     @Test
     public void testEliminar() {
         int id = 1;
-
+        when(usuarioRepository.existsById(id)).thenReturn(true);
         usuarioService.eliminar(id);
-
         verify(usuarioRepository, times(1)).deleteById(id);
     }
 }
