@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-usuario-route
+          uri: lb://MS-USUARIO
+          predicates:
+            - Path=/api/v1/usuarios/**
+
+        - id: ms-pagos-route
+          uri: lb://MS-PAGOS
+          predicates:
+            - Path=/api/v1/pagos/**
+
+        - id: ms-horario-route
+          uri: lb://MS-HORARIO
+          predicates:
+            - Path=/api/v1/horarios/**
+
+        - id: ms-asignacion-route
+          uri: lb://MS-ASIGNACION
+          predicates:
+            - Path=/api/v1/asignaciones/**
+
+        - id: ms-ejercicios-route
+          uri: lb://MS-EJERCICIOS
+          predicates:
+            - Path=/api/v1/ejercicios/**
+
+        - id: ms-entrenador-route
+          uri: lb://MS-ENTRENADOR
+          predicates:
+            - Path=/api/v1/entrenadores/**
+
+        - id: ms-nutricion-route
+          uri: lb://MS-NUTRICION
+          predicates:
+            - Path=/api/v1/nutricion/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
